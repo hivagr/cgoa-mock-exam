@@ -543,5 +543,206 @@
     "correct": 3,
     "section": "GitOps Tooling",
     "explanation": "GitOps notification controllers manage alerts related to reconciliation status, sync failures, and other GitOps-related events."
+  },
+  {
+    "question": "Which of the following is NOT a core principle of GitOps?",
+    "choices": [
+      "Declarative configuration",
+      "Versioned and immutable desired state",
+      "Manual synchronization between environments",
+      "Automated reconciliation"
+    ],
+    "correct": 2,
+    "section": "GitOps Principles",
+    "explanation": "GitOps relies on automation for synchronization (reconciliation) between the desired state (in Git) and the actual state, not manual processes."
+  },
+  {
+    "question": "Which tool is specifically designed for progressive delivery in GitOps?",
+    "choices": ["Flux", "Argo Rollouts", "Jenkins", "Terraform"],
+    "correct": 1,
+    "section": "GitOps Tooling",
+    "explanation": "Argo Rollouts is a Kubernetes controller and set of CRDs that provide advanced deployment capabilities such as blue-green, canary, and canary analysis for progressive delivery."
+  },
+  {
+    "question": "What is a key benefit of using Terraform in a GitOps workflow?",
+    "choices": [
+      "It replaces the need for Git.",
+      "It allows infrastructure to be defined as code and versioned in Git.",
+      "It automates application code testing.",
+      "It eliminates the need for CI/CD pipelines."
+    ],
+    "correct": 1,
+    "section": "Infrastructure as Code",
+    "explanation": "Terraform enables infrastructure to be defined as code, which can be versioned and managed in Git, aligning with GitOps principles."
+  },
+  {
+    "question": "How does GitOps differ from traditional CI/CD?",
+    "choices": [
+      "GitOps eliminates the need for CI pipelines.",
+      "GitOps uses Git as the single source of truth for both infrastructure and application deployments.",
+      "GitOps requires manual approval for every deployment.",
+      "GitOps only works with monolithic applications."
+    ],
+    "correct": 1,
+    "section": "CI/CD and GitOps",
+    "explanation": "GitOps extends CI/CD by using Git as the single source of truth for declarative infrastructure and application deployments, enabling automated, auditable, and reproducible processes."
+  },
+  {
+    "question": "What is a best practice for managing secrets in a GitOps workflow?",
+    "choices": [
+      "Store secrets directly in Git repositories.",
+      "Use external secret management tools like HashiCorp Vault or sealed secrets.",
+      "Share secrets via email or chat tools.",
+      "Hardcode secrets in deployment scripts."
+    ],
+    "correct": 1,
+    "section": "Security in GitOps",
+    "explanation": "Secrets should never be stored in Git. Instead, use external tools like Vault or sealed secrets to manage and inject secrets securely."
+  },
+  {
+    "question": "Why is observability important in GitOps?",
+    "choices": [
+      "To manually approve deployments.",
+      "To detect and alert on drift between desired and actual states.",
+      "To replace Git as the source of truth.",
+      "To slow down the deployment process."
+    ],
+    "correct": 1,
+    "section": "Observability and Monitoring",
+    "explanation": "Observability helps detect drift, monitor the health of deployments, and alert teams to discrepancies or issues in real time."
+  },
+  {
+    "question": "Which deployment strategy allows traffic to be gradually shifted from an old version to a new version of an application?",
+    "choices": ["Blue-Green", "Canary", "Rolling Update", "Recreate"],
+    "correct": 1,
+    "section": "Deployment Strategies",
+    "explanation": "Canary deployments incrementally shift traffic to the new version, reducing risk and allowing for monitoring before full rollout."
+  },
+  {
+    "question": "What is the role of a Kubernetes Custom Resource Definition (CRD) in GitOps?",
+    "choices": [
+      "To replace Git as the source of truth.",
+      "To extend Kubernetes API and define custom resources for GitOps tools like Argo CD or Flux.",
+      "To manually scale applications.",
+      "To store application source code."
+    ],
+    "correct": 1,
+    "section": "GitOps and Kubernetes",
+    "explanation": "CRDs allow GitOps tools to define and manage custom resources, such as applications and their desired states, within Kubernetes."
+  },
+  {
+    "question": "How does GitOps improve collaboration between development and operations teams?",
+    "choices": [
+      "By eliminating the need for operations teams.",
+      "By providing a transparent, auditable, and automated workflow centered around Git.",
+      "By requiring all changes to be approved by a single person.",
+      "By removing version control from the process."
+    ],
+    "correct": 1,
+    "section": "Collaboration and Workflow",
+    "explanation": "GitOps fosters collaboration by using Git as a shared, auditable source of truth, with automated processes for consistency and reliability."
+  },
+  {
+    "question": "How does GitOps help with compliance and audit requirements?",
+    "choices": [
+      "By hiding changes from auditors.",
+      "By providing a full audit trail of all changes in Git.",
+      "By allowing manual overrides without documentation.",
+      "By eliminating the need for documentation."
+    ],
+    "correct": 1,
+    "section": "Compliance and Audit",
+    "explanation": "GitOps ensures all changes are tracked in Git, providing a complete audit trail for compliance and review."
+  },
+  {
+    "question": "What is the first step in adopting GitOps for a new project?",
+    "choices": [
+      "Manually deploy the application to production.",
+      "Define the desired state of the infrastructure and application in Git.",
+      "Ignore version control until the project is complete.",
+      "Use only imperative commands for deployments."
+    ],
+    "correct": 1,
+    "section": "Getting Started with GitOps",
+    "explanation": "The first step is to define the desired state declaratively and store it in Git, which serves as the foundation for GitOps."
+  },
+  {
+    "question": "If a GitOps agent (e.g., Argo CD) reports a 'OutOfSync' status, what should you do?",
+    "choices": [
+      "Ignore the status and wait for it to resolve itself.",
+      "Manually apply changes to the cluster to match the desired state.",
+      "Check the Git repository for recent changes and verify the agent’s ability to reconcile the state.",
+      "Delete the Git repository and start over."
+    ],
+    "correct": 2,
+    "section": "Troubleshooting GitOps",
+    "explanation": "An 'OutOfSync' status indicates a drift between the desired state (Git) and the actual state. Investigate recent changes and ensure the agent can reconcile the state."
+  },
+  {
+    "question": "Which of the following is a core principle of GitOps?",
+    "choices": [
+      "The desired state of the system is stored in a version control system like Git.",
+      "Changes are pushed directly to production without versioning.",
+      "Manual approval is required for every deployment, regardless of the process.",
+      "The actual state of the system is never reconciled with the desired state."
+    ],
+    "correct": 0,
+    "section": "GitOps Principles",
+    "explanation": "GitOps requires that the desired state of the system be declarative, versioned, and stored in a version control system (most commonly Git). This allows for auditability, reproducibility, and automated reconciliation between the desired and actual states."
+  },
+  {
+    "question": "What is the primary purpose of using a GitOps approach in software delivery?",
+    "choices": [
+      "To eliminate the need for version control systems.",
+      "To enable faster, more reliable, and auditable deployments using Git as the single source of truth.",
+      "To replace CI/CD pipelines with manual deployment scripts.",
+      "To reduce the number of developers involved in the deployment process."
+    ],
+    "correct": 1,
+    "section": "GitOps Overview",
+    "explanation": "GitOps leverages Git as the single source of truth for declarative infrastructure and deployments, enabling faster, more reliable, and auditable software delivery."
+  },
+  {
+    "question": "Which tool is commonly used as a GitOps operator for Kubernetes?",
+    "choices": ["Jenkins", "Argo CD", "Docker Compose", "Ansible"],
+    "correct": 1,
+    "section": "GitOps Tooling",
+    "explanation": "Argo CD is a popular GitOps operator specifically designed for Kubernetes, enabling automated, Git-driven continuous delivery."
+  },
+  {
+    "question": "In GitOps, what does 'continuous reconciliation' mean?",
+    "choices": [
+      "The system periodically checks and corrects any drift between the actual and desired state.",
+      "Developers must manually approve every change before it is applied.",
+      "The desired state is only checked once per deployment cycle.",
+      "The system ignores any changes made outside of Git."
+    ],
+    "correct": 0,
+    "section": "GitOps Principles",
+    "explanation": "Continuous reconciliation means the system constantly monitors and automatically corrects any differences (drift) between the actual state of the system and the desired state defined in Git."
+  },
+  {
+    "question": "Which of the following best describes 'Infrastructure as Code' (IaC) in the context of GitOps?",
+    "choices": [
+      "Managing infrastructure using physical hardware configuration files.",
+      "Defining and managing infrastructure using machine-readable definition files stored in version control.",
+      "Using only manual processes to configure infrastructure.",
+      "Storing infrastructure secrets in plaintext within Git repositories."
+    ],
+    "correct": 1,
+    "section": "Infrastructure as Code",
+    "explanation": "Infrastructure as Code (IaC) involves managing infrastructure through machine-readable definition files, which are typically stored in version control systems like Git."
+  },
+  {
+    "question": "What is the role of a 'GitOps agent' in a GitOps workflow?",
+    "choices": [
+      "To manually approve pull requests in Git.",
+      "To continuously monitor the Git repository and apply changes to the target environment.",
+      "To replace the need for a Git repository.",
+      "To generate random infrastructure configurations."
+    ],
+    "correct": 1,
+    "section": "GitOps Workflow",
+    "explanation": "A GitOps agent (such as Argo CD or Flux) continuously monitors the Git repository for changes and automatically applies those changes to the target environment, ensuring the actual state matches the desired state."
   }
 ]
