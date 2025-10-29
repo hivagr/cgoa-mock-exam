@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cgoa-mock-exam
+  description: Certified GitOps Associated - Exam
+  annotations:
+    github.com/project-slug: hivagr/cgoa-mock-exam
+  tags:
+    - java
+  links:
+    - url: http://localhost:3000
+      title: Mock - Exam
+      icon: dashboard
+      type: admin-dashboard
+spec:
+  type: website
+  lifecycle: production
+  owner: infra
+  system: education
